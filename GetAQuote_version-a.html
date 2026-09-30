@@ -243,9 +243,11 @@
     .footer-market img { width: 16px; height: 16px; flex: 0 0 16px; }
     .footer-disclaimer { padding-top: 24px; box-shadow: inset 0 1px #a6a6a6; color: var(--text-secondary); }
     .footer-disclaimer p { width: calc((100% - 32px * 11) / 12 * 8 + 32px * 7); }
+    @media (max-width: 1439px) {
+      .car-summary { grid-column: 1 / span 4; }
+    }
     @media (max-width: 1247px) {
       :root { --page-gutter: 64px; }
-      .car-summary { grid-column: 1 / span 4; }
       .intro, .quote-form { grid-column: 5 / -1; }
       .desktop-nav { display: none; }
       .mobile-menu { display: flex; }
@@ -353,7 +355,7 @@
       </div>
       <div class="configuration-note">
         <img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJpY29uIj4KPGcgaWQ9IlZlY3RvciI+CjxwYXRoIGQ9Ik04IDBDMy42IDAgMCAzLjYgMCA4QzAgMTIuNCAzLjYgMTYgOCAxNkMxMi40IDE2IDE2IDEyLjQgMTYgOEMxNiAzLjYgMTIuNCAwIDggMFpNOCAxNUM0LjE1IDE1IDEgMTEuODUgMSA4QzEgNC4xNSA0LjE1IDEgOCAxQzExLjg1IDEgMTUgNC4xNSAxNSA4QzE1IDExLjg1IDExLjg1IDE1IDggMTVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNy41IDRIOC41VjUuMUg3LjVWNFpNOC41IDYuM1YxMkg3LjVWNi4zSDguNVoiIGZpbGw9ImJsYWNrIi8+CjwvZz4KPC9nPgo8L3N2Zz4K" alt="" width="16" height="16">
-        <p>Your Polestar Specialist will see these configuration details with your request.</p>
+        <p>Your Polestar Specialist will see your car configuration details with your request.</p>
       </div>
     </aside>
     <form class="quote-form" id="quote-form" novalidate aria-labelledby="contact-heading">

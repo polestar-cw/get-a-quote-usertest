@@ -125,7 +125,7 @@
     .spec-item dt { color: var(--text-secondary); }
     .spec-item dd { margin: 2px 0 0; overflow-wrap: anywhere; }
     .spec-details { padding-bottom: 23px; }
-    .car-highlights { grid-template-columns: 1.2fr 1fr; margin-bottom: 24px; }
+    .car-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 24px; }
     .variant-c .car-image-spacing { padding-bottom: 24px; }
     @media (max-width: 767px) {
       .variant-b .car-image-spacing, .variant-c .car-image-spacing { padding-bottom: 12px; }
@@ -258,9 +258,11 @@
     .footer-market img { width: 16px; height: 16px; flex: 0 0 16px; }
     .footer-disclaimer { padding-top: 24px; box-shadow: inset 0 1px #a6a6a6; color: var(--text-secondary); }
     .footer-disclaimer p { width: calc((100% - 32px * 11) / 12 * 8 + 32px * 7); }
+    @media (max-width: 1439px) {
+      .car-summary { grid-column: 1 / span 4; }
+    }
     @media (max-width: 1247px) {
       :root { --page-gutter: 64px; }
-      .car-summary { grid-column: 1 / span 4; }
       .intro, .quote-form { grid-column: 5 / -1; }
       .desktop-nav { display: none; }
       .mobile-menu { display: flex; }
@@ -371,16 +373,11 @@
           </button>
           <div class="spec-details" id="spec-details" hidden>
             <dl class="spec-list">
-            <div class="spec-item"><dt>Power</dt><dd>400 kW / 536 bhp</dd></div>
-            <div class="spec-item"><dt>0-60 mph</dt><dd>3.7 sec</dd></div>
-            <div class="spec-item"><dt>Torque</dt><dd>686 Nm / 506 lbf-ft</dd></div>
-            <div class="spec-item"><dt>Range up to</dt><dd>311 mi (WLTP)</dd></div>
             <div class="spec-item"><dt>Model Year</dt><dd>2027</dd></div>
             <div class="spec-item"><dt>Exterior</dt><dd>Space</dd></div>
             <div class="spec-item"><dt>Wheels</dt><dd>22” Performance</dd></div>
             <div class="spec-item"><dt>Interior</dt><dd>Bio-attributed MicroTech in Charcoal with Charcoal deco</dd></div>
             <div class="spec-item"><dt>Upgrades</dt><dd>Prime, Performance, Plus, Pilot</dd></div>
-            <div class="spec-item"><dt>Included single options</dt><dd>Privacy glass on rear side windows, AC-charging cable for public/home wallbox.</dd></div>
             </dl>
           </div>
         </section>
