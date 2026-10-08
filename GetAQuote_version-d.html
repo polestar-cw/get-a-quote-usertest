@@ -456,7 +456,7 @@
             </div>
           </fieldset>
           <div class="field">
-            <label for="email">Email address<span aria-hidden="true">*</span></label>
+            <label for="email">Email address<span id="email-optionality" aria-hidden="true">*</span></label>
             <input class="control" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error">
             <p class="hint" id="email-hint">example@domain.com</p>
             <p class="error-message" id="email-error" hidden></p>
@@ -813,19 +813,21 @@
       if (activeWidget && !mobileOptions.matches) positionPanel(activeWidget.trigger);
     }, { passive: true });
 
+    const email = document.querySelector("#email");
     const phone = document.querySelector("#phone");
-    const phoneOptionality = document.querySelector("#phone-optionality");
     const requiredFields = Array.from(form.querySelectorAll("input[required]:not([type='radio']), select[required]"));
     requiredFields.push(phone);
     function syncContactPreference() {
       phone.required = document.querySelector("#preference-phone").checked;
-      phoneOptionality.textContent = phone.required ? "*" : " (optional)";
-      if (phone.required) phoneOptionality.setAttribute("aria-hidden", "true");
-      else phoneOptionality.removeAttribute("aria-hidden");
-      if (submitted || phone.getAttribute("aria-invalid") === "true") {
-        validateField(phone);
-        refreshSummary();
+      email.required = !phone.required;
+      for (const control of [email, phone]) {
+        const optionality = document.querySelector("#" + control.id + "-optionality");
+        optionality.textContent = control.required ? "*" : " (optional)";
+        if (control.required) optionality.setAttribute("aria-hidden", "true");
+        else optionality.removeAttribute("aria-hidden");
+        if (submitted || control.getAttribute("aria-invalid") === "true") validateField(control);
       }
+      refreshSummary();
     }
     form.querySelectorAll('input[name="preference"]').forEach(radio => radio.addEventListener("change", syncContactPreference));
     syncContactPreference();
